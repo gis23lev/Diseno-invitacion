@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuracion base del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo mostrado en la pestana del navegador -->
+    <title>Novio & Novia</title>
+    <!-- Icono de la pestana -->
+    <link rel="icon" href="./assets/img/DyA-header-logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <!-- Estilos visuales de toda la invitacion -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Logica del slider, musica, contador y animaciones -->
+    <script src="./script.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--
+        Estructura general:
+        1) Pantalla de carga (loading)
+        2) Hero principal con slider y musica
+        3) Secciones informativas de la boda
+        4) Confirmacion final y footer
+    -->
+    <!-- NAV BAR 
+    <nav>
+        <div class="navbar">
+            <a href="" class="logo-header">
+                <img src="./assets/img/AyC-header-logo.png" alt="">
+            </a>
+            <div class="nav-menu">
+                <a href="">Home<div></div></a>
+                <a href="">Novio & Novia<div></div></a>
+                <a href="">Cuándo y Dónde<div></div></a>
+                <a href="">Galería<div></div></a>
+                <a href="">Features<div></div></a>
+            </div>
+            <a href="">
+                <div class="rsvp-ribbon">
+                    <div class="ribbon-text">RSVP</div>
+                    <div class="rsvp-ribbon-bottom">
+                        <div class="triangle-left"></div>
+                        <div class="triangle-right"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+    -->
+    <!-- LOADING SCREEN: se muestra primero y luego desaparece con transicion -->
+    <section id="loading-screen" class="loading-screen">
+        <div class="home-logo" >
+            <img class="logo-1" src="./assets/img/DyA-hero-logo.png" alt="">
+            <div class="container-block">
+                <div class="block">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPA DECORATIVA: hojas cayendo -->
+    <section id="leaves">
+        <div id="falling-leaves-container">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL DE LA INVITACION -->
+    <main id="main-content" class="main-content">
+        <!-- HOME: portada con slider de fotos -->
+        <section id="home">
+            <div class="tab">
+                <div id="tab1" class="circle" onclick="showSlide(1)"></div>
+                <div id="tab2" class="circle" onclick="showSlide(2)"></div>
+                <div id="tab3" class="circle" onclick="showSlide(3)"></div>
+            </div>
+            <div class="slides">
+                <img id="slide1" src="./assets/img/foto1.jpg" alt="">
+                <img id="slide2" src="./assets/img/foto2.jpg" alt="">
+                <img id="slide3" src="./assets/img/foto3.jpg" alt="">
+            </div>
+            <a href="#home-continue" class="home-continue">
+                <div class="music-player">
+                    <div id="play-button"><i class="fa-solid fa-play"></i></div>
+                    <audio loop id="song" src="./assets/audio/song.mp3"></audio>
+                    <!-- <div id="pause-button"><i class="fa-solid fa-pause"></i></div> -->
+                </div>
+                <i class="fa-solid fa-angles-down"></i>
+            </a>
+            <div class="home-logo">
+                <img src="./assets/img/DyA-hero-logo.png" alt="">
+            </div>
+        </section>
+        <!-- HOME CONTINUE: presentacion de novios + boton para agendar -->
+        <section id="home-continue" class="container hidden-element">
+            <div class="background-top-1 bg-item"></div>
+            <div class="background-bottom-1 bg-item"></div>
+            <div class="background-streak-top-1 bg-item"></div>
+            <div class="background-streak-bottom-1 bg-item"></div>
+            <div class="background-left-leaf bg-item"></div>
+            <div class="background-right-leaf bg-item"></div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+            <!-- <div class="circle-icon"><img src="./assets/icons/rings.png" alt=""></div> -->
+            <div class="container-home">
+                <h1>¡Vamos a Casarnos!</h1>
+                <div class="husband-bride">
+                    <div id="photo-data-husband" class="photo-data fade-in">
+                        <img class="photo bg-item" src="./assets/img/novio1.png" alt="">
+                        <h2>Novio</h2>
+                    </div>
+                    <img id="union" src="./assets/img/intro-separator.png" alt="">
+                    <div id="photo-data-bride" class="photo-data fade-in">
+                        <img class="photo bg-item" src="./assets/img/novia1.jpg" alt="">
+                        <h2>Novia</h2>
+                    </div>
+                </div>
+                <p class="fade-in">Y queremos que seas parte de nuestra historia, así que guarda la fecha en tu agenda</p>
+                <a class="fade-in" href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Boda+de+Daniel+y+Alexandra&dates=20261003T160000Z/20261003T235900Z&details=Celebra+con+nosotros+un+d%C3%ADa+inolvidable+de+amor+y+felicidad&location=Centro+de+Eventos+Los+Jardines" target="_blank">
+                    <div class="button">
+                        <div class="button-ribbon-left">
+                            <div class="triangle-top-left"></div>
+                            <div class="triangle-bottom-left"></div>
+                        </div>
+                        <h2>03 de Octubre, 2026</h2>
+                        <div class="button-ribbon-right">
+                            <div class="triangle-top-right"></div>
+                            <div class="triangle-bottom-right"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </section>
+        <!-- COUNTDOWN: contador regresivo a la fecha configurada en script.js -->
+        <section id="countdown-section" class="hidden-element hidden">
+            <div id="countdown-container" class="countdown-container fade-in">
+                <h1 id="countdown-title">Faltan sólo</h1>
+                <div id="countdown">
+                    <!-- <div><span id="months"></span>meses</div> -->
+                    <div><span id="days"></span>días</div>
+                    <div><span id="hours"></span>horas</div>
+                    <div><span id="minutes"></span>minutos</div>
+                    <div><span id="seconds"></span>segundos</div>
+                </div>
+            </div>
+            <div class="background-leaf-center bg-item"></div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+        </section>
+        <!-- PARENTS: padres y padrinos -->
+        <section id="parents" class="hidden-element hidden">
+            <div class="container-parents fade-in">
+                <h1>Con la bendición de nuestros padres...</h1>
+                <div class="husband-bride-parents">
+                    <div class="parent" id="husband-parents">
+                        <h2>Aferrer Vicente Pozo Vargas</h2>
+                        <h2>Aidee Valentina Laguna Romero</h2>
+                    </div>
+                    <img id="salud" src="./assets/icons/salud.png" alt="">
+                    <div class="parent" id="bride-parents">
+                        <h2>Pablo Rafael Coca Saavedra</h2>
+                        <h2>Magdalena Leyla Corcuy Iturralde</h2>
+                    </div>
+                </div>
+                <p>Que siempre han estado a nuestro lado y nos han enseñado el verdadero significado del amor y el compromiso.</p>
+                <div class="line-divisor-deco" style="margin-top: 30px; display: flex; align-items: center; width: 50%;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px; ;">
+                    <img src="./assets/icons/heart.png" alt="" style="filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); height: 30px; width: 30px;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px;">
+                </div>
+            </div>
+            <div class="container-parents fade-in">
+                <h1>Nuestros padrinos de religión...</h1>
+                <div class="husband-bride-parents">
+                    <div class="parent" id="husband-parents">
+                        <h2>Jose Cartagena</h2>
+                    </div>
+                    <img id="salud" src="./assets/icons/iglesia.png" alt="">
+                    <div class="parent" id="bride-parents">
+                        <h2>Cecilia Pacheco</h2>
+                    </div>
+                </div>
+                <div class="line-divisor-deco" style="margin-top: 30px; display: flex; align-items: center; width: 50%;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px; ;">
+                    <img src="./assets/icons/heart.png" alt="" style="filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); height: 30px; width: 30px;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px;">
+                </div>
+            </div>
+
+            <div class="container-parents fade-in">
+                <h1>Nuestros padrinos de civil...</h1>
+                <div class="husband-bride-parents">
+                    <div class="parent" id="husband-parents">
+                        <h2>Marco Prado</h2>
+                    </div>
+                    <img id="salud" src="./assets/icons/civil.png" alt="">
+                    <div class="parent" id="bride-parents">
+                        <h2>Roxana Laguna</h2>
+                    </div>
+                </div>
+                <div class="line-divisor-deco" style="margin-top: 30px; display: flex; align-items: center; width: 50%;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px; ;">
+                    <img src="./assets/icons/heart.png" alt="" style="filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); height: 30px; width: 30px;">
+                    <hr style="border: 1px solid #ffffff; filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3)); flex-grow: 1; margin: 0 10px;">
+                </div>
+            </div>
+
+            <div class="container-parents fade-in">
+                <h1>Y nuestros padrinos de aros</h1>
+                <div class="husband-bride-parents">
+                    <div class="parent" id="husband-parents">
+                        <h2>Christian Herrera</h2>
+                    </div>
+                    <img id="salud" src="./assets/icons/anillo.png" alt="">
+                    <div class="parent" id="bride-parents">
+                        <h2>Marialena Coca</h2>
+                    </div>
+                </div>
+                <p>Dos son mejor que uno, porque sacan más provecho de sus afanes, si uno de ellos se tropieza el otro lo levanta. "Eclesiastés 4: 9-10"</p>
+            </div>
+            <div class="background-leaf-left bg-item"></div>
+            <div class="background-leaf-right bg-item"></div>
+            <div class="background-leaf-left-center bg-item"></div>
+            <div class="background-leaf-right-center bg-item"></div>
+            <div class="background-leaf-top-left bg-item"></div>
+            <div class="background-leaf-top-right bg-item"></div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+        </section>
+        <!-- PLACE: fecha, hora y ubicacion -->
+        <section id="place" class="hidden-element hidden">
+            <div class="container-place fade-in">
+                <h1>Ceremonia y Celebración</h1>
+                <div class="container-place-info">
+                    <div class="info">
+                        <div class="info-sup">
+                            <div class="circle-icon" style="background-color: #026842; opacity: 0.5;"><img src="./assets/icons/calendario.png" alt=""></div>
+                            <h2 class="title-info">Día</h2>
+                            <p>Sábado 03 de Octubre 16:00</p>
+                        </div>
+                        <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Boda+de+Daniel+y+Alexandra&dates=20261003T160000Z/20261003T235900Z&details=Celebra+con+nosotros+un+d%C3%ADa+inolvidable+de+amor+y+felicidad&location=Centro+de+Eventos+Los+Jardines" target="_blank">
+                            <div class="button">
+                                <div class="button-ribbon-left">
+                                    <div class="triangle-top-left"></div>
+                                    <div class="triangle-bottom-left"></div>
+                                </div>
+                                <h2>Agendar</h2>
+                                <div class="button-ribbon-right">
+                                    <div class="triangle-top-right"></div>
+                                    <div class="triangle-bottom-right"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="info-sup">
+                            <div class="circle-icon" style="background-color: #026842; opacity: 0.5;"><img src="./assets/icons/ubicacion.png" alt=""></div>
+                            <h2 class="title-info">Lugar</h2>
+                            <p>Centro de Eventos <br> Los Jardines</p>
+                            <p class="info-add">La ceremonia y celebración serán en el mismo lugar</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/txyvQC6YUkSam8cZ7?g_st=aw" target="_blank">
+                            <div class="button">
+                                <div class="button-ribbon-left">
+                                    <div class="triangle-top-left"></div>
+                                    <div class="triangle-bottom-left"></div>
+                                </div>
+                                <h2>Cómo llegar</h2>
+                                <div class="button-ribbon-right">
+                                    <div class="triangle-top-right"></div>
+                                    <div class="triangle-bottom-right"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <img id="salon" src="./assets/img/salon-de-eventos.png" alt="">
+                </div>
+            </div>
+            <div class="background-top-leaf-center bg-item"></div>
+            <div class="background-bottom-leaf-center bg-item"></div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+        </section>
+        <!-- SCHEDULE: cronograma del evento -->
+        <section id="schedule" class="hidden-element hidden">
+            <div class="container-schedule fade-in">
+                <h1>Cronograma de la Boda</h1>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>16:00 - Ceremonia</h3>
+                            <p>Inicio de la ceremonia de boda. Intercambio de votos y anillos. Firma del acta de matrimonio. Salida de los recién casados.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>17:00 - Recepción de la Ceremonia</h3>
+                            <p>Felicitaciones y abrazos. Fotos de grupo con los invitados.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>18:20 - Primer Baile y Baile con los Padres</h3>
+                            <p>Primer baile de los novios. Baile de la novia con su padre y el novio con su madre.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>18:45 - Brindis de los novios</h3>
+                            <p>Discurso de los novios, padres y padrinos.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>20:00 - Cena</h3>
+                            <p>Servicio de la comida principal.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>23:30 - Corte de la Torta</h3>
+                            <p>Corte de la torta nupcial. Fotos y brindis con la torta.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-circle"><img src="./assets/icons/heart.png" alt=""></div>
+                        <div class="timeline-content">
+                            <h3>01:30 - Final</h3>
+                            <p>Finalización oficial del evento. Despedida de los novios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-top-1 bg-item"></div>
+            <div class="background-bottom-1 bg-item"></div>
+            <div class="background-streak-top-1 bg-item"></div>
+            <div class="background-streak-bottom-1 bg-item"></div>
+            <div class="background-left-leaf bg-item"></div>
+            <div class="background-right-leaf bg-item"></div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+        </section>
+        <!-- PARTY: reglas e indicaciones para invitados -->
+        <section id="party" class="hidden-element hidden">
+            <div class="container-party fade-in">
+                <h1>Detalles importantes</h1>
+                <p>Para que nuestra celebración sea perfecta y todos puedan disfrutar al máximo, queremos compartir algunas indicaciones importantes:</p>
+                <div class="container-party-info">
+                    <div class="info">
+                        <div class="circle-icon" style="background-color: #026842; opacity: 0.5;"><img src="./assets/icons/corbata-de-mono.png" alt=""></div>
+                        <h2 class="title-info">CÓDIGO DE VESTIMENTA</h2>
+                        <p>Nuestra celebración será un evento elegante y formal. Les pedimos que se vistan de acuerdo a la ocasión con atuendos de gala:</p>
+                        <ul>
+                            <li>Damas: Vestido largo o de cocktail.</li>
+                            <li>Caballeros: Traje y corbata.</li>
+                        </ul>
+                        <!--
+                        <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Boda+Alex+y+Cynthia&dates=20240907T170000Z/20240908T040000Z&details=Descripci%C3%B3n+del+evento&location=Lugar+del+evento" target="_blank">
+                            <div class="button">
+                                <div class="button-ribbon-left">
+                                    <div class="triangle-top-left"></div>
+                                    <div class="triangle-bottom-left"></div>
+                                </div>
+                                <h2>Agendar</h2>
+                                <div class="button-ribbon-right">
+                                    <div class="triangle-top-right"></div>
+                                    <div class="triangle-bottom-right"></div>
+                                </div>
+                            </div>
+                        </a>
+                        -->
+                    </div>
+                    <div class="info">
+                        <div class="circle-icon" style="background-color: #026842; opacity: 0.5;"><img src="./assets/icons/bebe.png" alt=""></div>
+                        <h2 class="title-info">ASISTENCIA INFANTIL</h2>
+                        <p>Debido a limitaciones de espacio y para asegurar que todos disfruten del evento sin preocupaciones, hemos decidido que nuestra celebración sea exclusivamente para adultos. Agradecemos su comprensión y esperamos que puedan disfrutar de una noche de celebración con nosotros.</p>
+                        <!-- 
+                        <a href="https://maps.app.goo.gl/4N6EGS5sfeR6D9JLA" target="_blank">
+                            <div class="button">
+                                <div class="button-ribbon-left">
+                                    <div class="triangle-top-left"></div>
+                                    <div class="triangle-bottom-left"></div>
+                                </div>
+                                <h2>Cómo llegar</h2>
+                                <div class="button-ribbon-right">
+                                    <div class="triangle-top-right"></div>
+                                    <div class="triangle-bottom-right"></div>
+                                </div>
+                            </div>
+                        </a>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="wave" id="wave1" style="--i:1;"></div>
+            <div class="wave" id="wave2" style="--i:2;"></div>
+            <div class="wave" id="wave3" style="--i:3;"></div>
+            <div class="wave" id="wave4" style="--i:4;"></div>
+        </section>
+        <!-- ATTENDANCE: llamada a confirmar asistencia -->
+        <section id="attendance" class="hidden-element hidden">
+            <div class="container-attendance fade-in">
+                <div class="circle-icon" style="height: 150px; width: 150px; background-color: #026842; opacity: 0.5;"><img src="./assets/icons/invitacion-de-boda.png" alt="" style="margin: 15px;"></div>
+                <h1>Esperamos contar contigo en este día <br> tan especial para nosotros</h1>
+                <a href="https://api.whatsapp.com/send?phone=59179349493&text=%C2%A1Gracias%20por%20la%20invitaci%C3%B3n%20a%20su%20boda!%20Por%20supuesto%20que%20estar%C3%A9%20ah%C3%AD%20para%20celebrar%20con%20ustedes%20%F0%9F%8E%89%F0%9F%92%92" target="_blank">
+                    <div class="button">
+                        <div class="button-ribbon-left">
+                            <div class="triangle-top-left"></div>
+                            <div class="triangle-bottom-left"></div>
+                        </div>
+                        <h2>Confirmar asistencia</h2>
+                        <div class="button-ribbon-right">
+                            <div class="triangle-top-right"></div>
+                            <div class="triangle-bottom-right"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="background-top-1 bg-item"></div>
+            <div class="background-bottom-1 bg-item"></div>
+            <div class="background-streak-top-1 bg-item"></div>
+            <div class="background-streak-bottom-1 bg-item"></div>
+            <div class="background-left-leaf bg-item"></div>
+            <div class="background-right-leaf bg-item"></div>
+        </section>
+    </main>
+    <!-- FOOTER: credito final -->
+    <footer id="dev-name" class="hidden-element hidden">
+        <p class="bg-item">Hecho con <img src="./assets/icons/heart.png" alt=""> por G&S</p>
+    </footer>
+</body>
+</html>

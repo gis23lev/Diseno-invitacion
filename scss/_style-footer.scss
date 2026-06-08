@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// _style-footer
+// Pie de pagina con creditos.
+// -----------------------------------------------------------------------------
+
+#dev-name{
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-tertiary-color;
+    p{
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: $title-primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    img{
+        height: 25px;
+    }
+}

@@ -1,0 +1,191 @@
+// -----------------------------------------------------------------------------
+// _style-place
+// Seccion de lugar/fecha con tarjetas de informacion.
+// -----------------------------------------------------------------------------
+
+#place{
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .container-place{
+        display: flex;
+        flex-direction: column;
+        transform: translatey(-50px);
+        position: relative;
+        justify-items: center;
+        align-items: center;
+        z-index: 100;
+        .container-place-info{
+            display: flex;
+            gap: 20px;
+            #salon{
+                border-radius: 20px;
+                height: 400px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+            .info{
+                border-radius: 20px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                background-color: #ffff;
+                justify-content: space-between;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                padding: 25px;
+                .info-sup{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .title-info{
+                    font-size: 20px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                p{
+                    margin-top: 0;
+                    padding: 0px 10px;
+                    text-wrap: wrap;
+                    text-align: center;
+                    height: 50px;
+                    margin-bottom: 10px;
+                }
+                .info-add{
+                    font-size: 16px;
+                    margin: 0;
+                    
+                    padding: 0px 20px;
+                }
+            }
+        }
+    }
+
+    .background-top-leaf-center {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0%) scaleY(-1);
+        background-image: url('../assets/img/background-decoration/leaf-4-lightgreen.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        z-index: 5;
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+    &.scrolled .background-top-leaf-center {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scaleY(-1);
+    }
+    .background-bottom-leaf-center {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%,-50%) ;
+        background-image: url('../assets/img/background-decoration/leaf-4-lightgreen.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        z-index: 5;
+        opacity: 0;
+        transition: all 1s ease-out;
+    }
+    &.scrolled .background-bottom-leaf-center {
+        opacity: 0.6;
+        transform: translateX(-50%);
+    }
+    
+    .wave{
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(../assets/img/background-decoration/wave-down.png);
+        background-size: 1000px 100px;
+        animation: animate 4s ease-in-out infinite;
+        animation-delay: calc(var(--i)*0.25s);
+    }
+
+    .wave#wave1{
+        z-index: 4;
+        opacity: 1;
+        background-position-x: 500px;
+    }
+
+    .wave#wave2{
+        z-index: 3;
+        opacity: 0.7;
+        background-position-x: 700px;
+    }
+
+    .wave#wave3{
+        z-index: 2;
+        opacity: 0.5;
+        background-position-x: 250px;
+    }
+
+    .wave#wave4{
+        z-index: 1;
+        opacity: 0.2;
+        background-position-x: 100px;
+    }
+
+    @keyframes animate {
+        0%, 100%{
+            transform: translateY(0px);
+        }
+
+        50%{
+            transform: translateY(20px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    #place{
+        height: auto;
+        .container-place{
+            margin-bottom: 0;
+            h1{
+                margin-top: 20px;
+                width: 90%;
+            }
+            transform: translatey(0px);
+            margin-bottom: 20px;
+            .container-place-info{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                .info{
+                    width: 90%;
+                    height: auto;
+                    padding: 20px;
+                    p{
+                        height: auto;
+                        align-content: center;
+                    }
+                    .info-sup{
+                        margin-bottom: 15px;
+                    }
+                }
+                #salon {
+                    width: 105%;
+                    margin: 0;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

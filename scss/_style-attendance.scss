@@ -1,0 +1,164 @@
+// -----------------------------------------------------------------------------
+// _style-attendance
+// Cierre con llamada a confirmar asistencia.
+// -----------------------------------------------------------------------------
+
+#attendance{
+    background-color: $background-primary-color;
+    position:relative;
+    height: 100vh;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+    .container-attendance{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        h1{
+            margin-top: 35px;
+        }
+    }
+    .background-top-1{
+        background-image: url(../assets/img/background-decoration/background-top.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        width: 50%;
+        height: 40%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 2s ease-out;
+    }
+
+    &.scrolled .background-top-1 {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .background-bottom-1{
+        background-image: url(../assets/img/background-decoration/background-top.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        rotate: -180deg;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 2s ease-out;
+    }
+
+    &.scrolled .background-bottom-1 {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .background-streak-top-1{
+        background-image: url(../assets/img/background-decoration/background-streak-top-lightgreen.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        top: 450px;
+        left: -23%;
+        rotate: 230deg;
+        transform:  scaleX(-1) translateY(-100%);
+
+        opacity: 0;
+        transition: all 2s ease-out;
+    }
+    &.scrolled .background-streak-top-1 {
+        opacity: 1;
+        transform:  scaleX(-1) translateY(-10%);
+    }
+
+    .background-streak-bottom-1{
+        background-image: url(../assets/img/background-decoration/background-streaksimple-top-lightgreen.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        top: 0px;
+        right: -33%;
+        rotate: 20deg;
+        transform: scalex(-1) translateX(-40%);
+        
+        opacity: 0;
+        transition: all 2s ease-out;
+    }
+    &.scrolled .background-streak-bottom-1 {
+        opacity: 1;
+        transform: scaleX(-1) translatey(0);
+    }
+    .background-left-leaf{
+        background-image: url(../assets/img/background-decoration/leaf-5-lightgreen.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: -15%;
+        transform: scalex(1) translateY(40%);
+        rotate: 100deg;
+
+        opacity: 0;
+        transition: all 2s ease-out;
+    }
+    &.scrolled .background-left-leaf {
+        opacity: 1;
+        transform: scaleX(1) translatey(0);
+    }
+    .background-right-leaf{
+        background-image: url(../assets/img/background-decoration/leaf-2-lightgreen.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        width: 50%;
+        height: 70%;
+        position: absolute;
+        top: -55px;
+        right: -28%;
+        rotate: -5deg;
+        transform: scale(1, -1) translate(50%);
+        
+        opacity: 0;
+        transition: all 2s ease-out;
+    }
+    &.scrolled .background-right-leaf {
+        opacity: 1;
+        transform: scale(1, -1) translatey(0);
+    }
+}
+
+@media screen and (max-width: 768px){
+    #attendance{
+        width: 100%;
+        .container-attendance{
+            h1{
+                width: 80%;
+            }
+        }
+        .background-left-leaf{
+            left: -200px;
+            width: 100%;
+        }
+        .background-right-leaf{
+            right: -30px;
+            top: -200px;
+            width: 60%;
+        }
+    }
+}

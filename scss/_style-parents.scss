@@ -1,0 +1,350 @@
+// -----------------------------------------------------------------------------
+// _style-parents
+// Secciones de padres y padrinos con su composicion visual.
+// -----------------------------------------------------------------------------
+
+#parents{
+    min-height: 100vh;
+    background-color: $background-tertiary-color;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .container-parents{
+        transform: translateY(-30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        .husband-bride-parents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            .parent{
+                width: 100%;
+                h2{
+                    text-align: center;
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
+            #salud{
+                height: 150px;
+                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5)); 
+            }
+            #husband-parents{
+                h2{
+                    text-align: right;
+                }
+            }
+            #bride-parents{
+                h2{
+                    text-align: left;
+                }
+            }
+        }
+        h1{
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p{
+            margin-top: 30px;
+            width: 750px;
+            text-align: center;
+            color: $title-secondary-color;
+        }
+    }
+    .background-leaf-left{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 500px;
+        height: 300px;
+        background-image: url(../assets/img/background-decoration/leaf-6-white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        opacity: 0;
+        transform: translate(-100%,100%);
+        transition: all 1s ease-out;
+    }
+    .background-leaf-right{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 500px;
+        height: 300px;
+        background-image: url(../assets/img/background-decoration/leaf-6-white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        opacity: 0;
+        transform: translate(100%,100%) scaleX(-1);
+        transition: all 1s ease-out;
+    }
+    .background-leaf-top-left{
+        position: absolute;
+        top: -25px;
+        left: -9%;
+        width: 500px;
+        height: 350px;
+        background-image: url(../assets/img/background-decoration/leaf-3-white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        rotate: 130deg;
+
+        opacity: 0;
+        transform: translate(100%,100%) scalex(-1);
+        transition: all 1s ease-out;
+    }
+    .background-leaf-top-right{
+        position: absolute;
+        top: -25px;
+        right: -9%;
+        width: 500px;
+        height: 350px;
+        background-image: url(../assets/img/background-decoration/leaf-3-white.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        rotate: -130deg;
+
+        opacity: 0;
+        transform: translate(-100%,100%);
+        transition: all 1s ease-out;
+    }
+    .background-leaf-left-center{
+        position: absolute;
+        top: 50%;
+        left: -25%;
+        width: 1000px;
+        height: 250px;
+        background-image: url('../assets/img/background-decoration/leaf-4-white.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        rotate: -90deg;
+
+        opacity: 0;
+        transform: translate(10%,-100%);
+        transition: all 1s ease-out;
+    }
+    .background-leaf-right-center{
+        position: absolute;
+        top: 50%;
+        right: -25%;
+        width: 1000px;
+        height: 250px;
+        background-image: url('../assets/img/background-decoration/leaf-4-white.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        rotate: -90deg;
+
+        opacity: 0;
+        transform: translate(10%,100%) scaley(-1);
+        transition: all 1s ease-out;
+    }
+
+    .wave{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(../assets/img/background-decoration/wave.png);
+        background-size: 1000px 100px;
+        animation: animate 4s ease-in-out infinite;
+        animation-delay: calc(var(--i)*0.25s);
+    }
+
+    .wave#wave1{
+        z-index: 4;
+        opacity: 1;
+        background-position-x: 500px;
+    }
+
+    .wave#wave2{
+        z-index: 3;
+        opacity: 0.7;
+        background-position-x: 700px;
+    }
+
+    .wave#wave3{
+        z-index: 2;
+        opacity: 0.5;
+        background-position-x: 250px;
+    }
+
+    .wave#wave4{
+        z-index: 1;
+        opacity: 0.2;
+        background-position-x: 100px;
+    }
+
+    @keyframes animate {
+        0%, 100%{
+            transform: translateY(0px);
+        }
+        50%{
+            transform: translateY(20px);
+        }
+    }
+    &.scrolled .background-leaf-left {
+        opacity: 1;
+        transform: translate(0,0)
+    }
+    &.scrolled .background-leaf-right {
+        opacity: 1;
+        transform: translate(0,0);
+        transform: scaleX(-1);
+    }
+    &.scrolled .background-leaf-top-left {
+        opacity: 1;
+        transform: translate(0,0) scalex(-1);
+    }
+    &.scrolled .background-leaf-top-right {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    &.scrolled .background-leaf-left-center {
+        opacity: 1;
+        transform: translate(10%,0%);
+    }
+    &.scrolled .background-leaf-right-center {
+        opacity: 1;
+        transform: translate(10%,0%) scaley(-1);
+    }
+}
+
+@media screen and (max-width: 768px){
+    #parents{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding-top: 150px;
+        padding-bottom: 80px;
+        .container-parents{
+            width: 80%;
+            z-index: 10;
+            .husband-bride-parents{
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                .parent{
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 7px;
+                    h2{
+                        font-size: 16px;
+                        text-align: center;
+                        line-height: 20px;
+                    }
+                }
+                #husband-parents{
+                    h2{
+                        text-align: center;
+                    }
+                }
+                #bride-parents{
+                    h2{
+                        text-align: center;
+                    }
+                }
+                #salud{
+                    height: 100px;
+                }
+            }
+            h1{
+                margin-bottom: 35px;
+            }
+            p{
+                width: 100%;
+                margin: 30px 0px 0px 0px;
+            }
+        }
+        .background-leaf-left{
+            width: 300px;
+            height: 200px;
+            opacity: 1;
+            transform: translate(-40%, -20%) scale(1,-1) rotate(90deg) ;
+        }
+        .background-leaf-right{
+            width: 300px;
+            height: 200px;
+            opacity: 1;
+            transform: translate(40%, -20%) scale(-1,-1) rotate(90deg);
+        }
+        &.scrolled .background-leaf-left {
+            opacity: 1;
+            transform: translate(-40%, -20%) scale(1,-1) rotate(90deg) ;
+        }
+        &.scrolled .background-leaf-right {
+            opacity: 1;
+            transform: translate(40%, -20%) scale(-1,-1) rotate(90deg);
+        }
+        .background-leaf-top-left{
+            width: 300px;
+            height: 200px;
+            left: -110px;
+            opacity: 1;
+            transform: translate(0,0) scalex(-1);
+        }
+        .background-leaf-top-right{
+            width: 300px;
+            height: 200px;
+            right: -110px;
+            opacity: 1;
+            transform: translate(0,0);
+        }
+        &.scrolled .background-leaf-top-left {
+            opacity: 1;
+            transform: translate(0,0) scalex(-1);
+        }
+        &.scrolled .background-leaf-top-right {
+            opacity: 1;
+            transform: translate(0,0);
+        }
+        .background-leaf-left-center{
+            top: 50%;
+            left: -25%;
+            width: 500px;
+            height: 125px;
+            opacity: 0;
+            transform: translate(10%,-200%);
+            transition: all 1s ease-out;
+        }
+        .background-leaf-right-center{
+            top: 50%;
+            right: -25%;
+            width: 500px;
+            height: 125px;
+            opacity: 0;
+            transform: translate(10%,200%) scaley(-1);
+            transition: all 1s ease-out;
+        }
+        &.scrolled .background-leaf-left-center {
+            opacity: 1;
+            transform: translate(10%,-100%);
+        }
+        &.scrolled .background-leaf-right-center {
+            opacity: 1;
+            transform: translate(10%,100%) scaley(-1);
+        }
+    }
+
+}

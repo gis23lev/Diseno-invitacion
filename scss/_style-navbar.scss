@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// _style-navbar
+// Estilos de la barra de navegacion y cinta RSVP.
+// -----------------------------------------------------------------------------
+
+nav{
+    height: 80px;
+    display: flex;
+    border-bottom: 1px solid #cecece;
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 10;
+    .navbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 14%;
+        position: relative;
+        .logo-header{
+            position: relative;
+            display: inline-block;
+            z-index: 12;
+            img{
+                display: block;
+                height: 55px;
+                width: 100%;
+            }
+            &::before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+            }
+        }
+        .nav-menu{
+            display: flex;
+            gap: 40px;
+            position: absolute;
+            width: 100%;
+            justify-content: center;
+            z-index: 11;
+            a{
+                position: relative;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 13px;
+                line-height: 1.6;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: $title-tertiary-color;
+                transition: color 0.3s;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -30px;
+                    left: 0;
+                    width: 100%;
+                    height: 5px;
+                    background-color: #ffff;
+                    transition: background-color 0.3s;
+                }
+                &:hover{
+                    color: $paragrap-primary-color;
+                    &::before {
+                        background-color: $background-tertiary-color;
+                    }
+                }
+            }
+            
+        }
+        .rsvp-ribbon{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 12;
+            .ribbon-text{
+                height: 81px;
+                color: #ffffff;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 1.6;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                text-decoration: none;
+                background-color: $background-tertiary-color;
+                width: 72px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: padding-top 0.3s;
+            }
+            .rsvp-ribbon-bottom{
+                display: flex;
+                width: 72px;
+                justify-content: space-between;
+                .triangle-left{
+                    width: 0;
+                    height: 0;
+                    border-right: 18px solid transparent;
+                    border-top: 8px solid $background-tertiary-color;
+                    border-left: 18px solid $background-tertiary-color;
+                    border-bottom: 8px solid transparent;
+                }
+                .triangle-right{
+                    width: 0;
+                    height: 0;
+                    border-right: 18px solid $background-tertiary-color;
+                    border-top: 8px solid $background-tertiary-color;
+                    border-left: 18px solid transparent;
+                    border-bottom: 8px solid transparent;
+                }
+            }
+            &:hover{
+                .ribbon-text{
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+}

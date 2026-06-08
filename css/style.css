@@ -1,0 +1,2861 @@
+/* CSS compilado: generado desde archivos SCSS. */
+/* Para comentarios y edicion manual, revisar carpeta /scss. */
+
+@charset "UTF-8";
+/* Colors */
+/* Fonts */
+/* Labels */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  text-align: center;
+  color: #026842;
+  animation: animatedtext 4s ease-in-out infinite;
+  line-height: 50px;
+}
+
+@keyframes animatedtext {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #545756;
+}
+
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888888;
+  text-decoration: none;
+}
+
+p, li {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+
+.circle-icon {
+  width: 120px;
+  height: 120px;
+  background-color: #B4D2C8;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s;
+  position: relative;
+  animation: beat 1s infinite;
+}
+.circle-icon img {
+  padding: 10px;
+}
+.circle-icon .heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-image: url("../assets/img/icons/heart.png");
+  background-size: cover;
+  animation: beat 2s infinite;
+}
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.button {
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  transition: transform 0.5s;
+}
+.button h2 {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #B4D2C8;
+  text-align: center;
+}
+.button:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+.button:hover h2 {
+  color: white;
+  background-color: rgba(2, 104, 66, 0.5);
+}
+.button:hover .button-ribbon-left .triangle-top-left {
+  width: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid rgba(2, 104, 66, 0.5);
+  border-bottom: 12px solid transparent;
+  border-top: 12px solid rgba(2, 104, 66, 0.5);
+}
+.button:hover .button-ribbon-left .triangle-bottom-left {
+  width: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid rgba(2, 104, 66, 0.5);
+  border-bottom: 12px solid rgba(2, 104, 66, 0.5);
+  border-top: 12px solid transparent;
+}
+.button:hover .button-ribbon-right .triangle-top-right {
+  width: 0;
+  border-left: 9px solid rgba(2, 104, 66, 0.5);
+  border-right: 9px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-top: 12px solid rgba(2, 104, 66, 0.5);
+}
+.button:hover .button-ribbon-right .triangle-bottom-right {
+  width: 0;
+  border-left: 9px solid rgba(2, 104, 66, 0.5);
+  border-right: 9px solid transparent;
+  border-bottom: 12px solid rgba(2, 104, 66, 0.5);
+  border-top: 12px solid transparent;
+}
+.button .button-ribbon-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button .button-ribbon-left .triangle-top-left {
+  width: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid #B4D2C8;
+  border-bottom: 12px solid transparent;
+  border-top: 12px solid #B4D2C8;
+}
+.button .button-ribbon-left .triangle-bottom-left {
+  width: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid #B4D2C8;
+  border-bottom: 12px solid #B4D2C8;
+  border-top: 12px solid transparent;
+}
+.button .button-ribbon-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button .button-ribbon-right .triangle-top-right {
+  width: 0;
+  border-left: 9px solid #B4D2C8;
+  border-right: 9px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-top: 12px solid #B4D2C8;
+}
+.button .button-ribbon-right .triangle-bottom-right {
+  width: 0;
+  border-left: 9px solid #B4D2C8;
+  border-right: 9px solid transparent;
+  border-bottom: 12px solid #B4D2C8;
+  border-top: 12px solid transparent;
+}
+
+.hidden-element {
+  display: none;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+    line-height: 30px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .circle-icon {
+    width: 100px;
+    height: 100px;
+  }
+  .button h2 {
+    padding: 10px 15px;
+  }
+}
+nav {
+  height: 80px;
+  display: flex;
+  border-bottom: 1px solid #cecece;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 10;
+}
+nav .navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 14%;
+  position: relative;
+}
+nav .navbar .logo-header {
+  position: relative;
+  display: inline-block;
+  z-index: 12;
+}
+nav .navbar .logo-header img {
+  display: block;
+  height: 55px;
+  width: 100%;
+}
+nav .navbar .logo-header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+nav .navbar .nav-menu {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  z-index: 11;
+}
+nav .navbar .nav-menu a {
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888888;
+  transition: color 0.3s;
+}
+nav .navbar .nav-menu a::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+nav .navbar .nav-menu a:hover {
+  color: #000000;
+}
+nav .navbar .nav-menu a:hover::before {
+  background-color: #B4D2C8;
+}
+nav .navbar .rsvp-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+nav .navbar .rsvp-ribbon .ribbon-text {
+  height: 81px;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #B4D2C8;
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: padding-top 0.3s;
+}
+nav .navbar .rsvp-ribbon .rsvp-ribbon-bottom {
+  display: flex;
+  width: 72px;
+  justify-content: space-between;
+}
+nav .navbar .rsvp-ribbon .rsvp-ribbon-bottom .triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 18px solid transparent;
+  border-top: 8px solid #B4D2C8;
+  border-left: 18px solid #B4D2C8;
+  border-bottom: 8px solid transparent;
+}
+nav .navbar .rsvp-ribbon .rsvp-ribbon-bottom .triangle-right {
+  width: 0;
+  height: 0;
+  border-right: 18px solid #B4D2C8;
+  border-top: 8px solid #B4D2C8;
+  border-left: 18px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+nav .navbar .rsvp-ribbon:hover .ribbon-text {
+  padding-top: 15px;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #B4D2C8;
+  color: #fff;
+  font-size: 2em;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.loading-screen .home-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.loading-screen .home-logo .logo-1 {
+  position: absolute;
+  z-index: 0;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  height: 450px;
+}
+.loading-screen .home-logo .container-block {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.loading-screen .home-logo .container-block .block {
+  opacity: 0.5;
+  width: 450px;
+  height: 450px; /* Ajusta la altura según sea necesario */
+  background-color: #B4D2C8;
+  animation: crecer 5s forwards;
+  z-index: 1000;
+}
+
+@keyframes crecer {
+  to {
+    width: 0px;
+  }
+}
+.show-content .main-content {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #loading-screen .home-logo {
+    width: 300px;
+    height: 100vh;
+  }
+  #loading-screen .home-logo img {
+    width: 300px;
+    height: 300px;
+  }
+}
+#home {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+#home .tab {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+}
+#home .tab .circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #F6F4F2;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px;
+  cursor: pointer;
+}
+#home .tab .circle.active {
+  background-color: #F6F4F2;
+}
+#home .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#home .slides img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s linear;
+  z-index: 1;
+}
+#home .slides img.active {
+  opacity: 1;
+  z-index: 3;
+}
+#home .slides #slide1, #home .slides #slide2 {
+  object-position: right;
+}
+#home .home-logo {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(102, 121, 115, 0.3);
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+#home .home-logo img {
+  height: 450px;
+}
+#home .home-continue {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10000;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floating 1.5s linear infinite;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+}
+#home .home-continue .music-player {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #F6F4F2;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home .home-continue .music-player i {
+  color: #F6F4F2;
+  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px;
+  font-size: 20px;
+  padding: 10px;
+}
+#home .home-continue .music-player #play-button {
+  margin-top: 1px;
+  margin-left: 2px;
+  display: block;
+  cursor: pointer;
+}
+#home .home-continue .music-player #pause-button {
+  display: none;
+  margin-top: 1px;
+  cursor: pointer;
+}
+#home .home-continue .fa-angles-down {
+  color: #F6F4F2;
+  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 10px;
+  text-align: center;
+}
+@keyframes floating {
+  0% {
+    margin-bottom: 0px;
+  }
+  50% {
+    margin-bottom: 20px;
+  }
+  100% {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #home .home-logo img {
+    width: 300px;
+    height: 300px;
+  }
+  #home .tab {
+    top: 75vh;
+    right: 50%;
+    display: flex;
+    flex-direction: row;
+    transform: translate(50%, 0);
+  }
+}
+#home-continue {
+  padding: 30px;
+  position: relative;
+  min-height: 100vh;
+  background-color: #F6F4F2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+#home-continue .container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translatey(-50px);
+}
+#home-continue .container-home h1 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+#home-continue .container-home .husband-bride {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#home-continue .container-home .husband-bride .photo-data .photo {
+  width: 300px;
+  border-radius: 50%;
+  border: 15px solid #DCDCDC;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+#home-continue .container-home .husband-bride .photo-data h2 {
+  text-align: center;
+  color: #918f8f;
+  font-size: 20px;
+}
+#home-continue .container-home .husband-bride #union {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+#home-continue .container-home a {
+  transition: transform 0.5s;
+}
+#home-continue .container-home a:hover {
+  transform: scale(1.08);
+}
+#home-continue .container-home a:hover h2 {
+  color: rgb(44, 43, 43);
+}
+#home-continue .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave-lightgreen.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#home-continue .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#home-continue .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#home-continue .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#home-continue .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+#home-continue .background-top-1 {
+  background-image: url(../assets/img/background-decoration/background-top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-top-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+#home-continue .background-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  rotate: -180deg;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-bottom-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+#home-continue .background-streak-top-1 {
+  background-image: url(../assets/img/background-decoration/background-streak-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  top: 450px;
+  left: -23%;
+  rotate: 230deg;
+  transform: scaleX(-1) translateY(-100%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-streak-top-1 {
+  opacity: 1;
+  transform: scaleX(-1) translateY(-10%);
+}
+#home-continue .background-streak-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-streaksimple-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  top: 0px;
+  right: -33%;
+  rotate: 20deg;
+  transform: scalex(-1) translateX(-40%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-streak-bottom-1 {
+  opacity: 1;
+  transform: scaleX(-1) translatey(0);
+}
+#home-continue .background-left-leaf {
+  background-image: url(../assets/img/background-decoration/leaf-5-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -15%;
+  transform: scalex(1) translateY(40%);
+  rotate: 100deg;
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-left-leaf {
+  opacity: 1;
+  transform: scaleX(1) translatey(0);
+}
+#home-continue .background-right-leaf {
+  background-image: url(../assets/img/background-decoration/leaf-2-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  top: -55px;
+  right: -28%;
+  rotate: -5deg;
+  transform: scale(1, -1) translate(50%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#home-continue.scrolled .background-right-leaf {
+  opacity: 1;
+  transform: scale(1, -1) translatey(0);
+}
+
+@media screen and (max-width: 768px) {
+  #home-continue {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  #home-continue .container-home {
+    transform: translatey(-40px);
+  }
+  #home-continue .container-home .husband-bride {
+    flex-direction: column;
+  }
+  #home-continue .container-home .husband-bride .photo-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  #home-continue .container-home .husband-bride .photo-data .photo {
+    width: 200px;
+    border: 10px solid #DCDCDC;
+  }
+  #home-continue .container-home .husband-bride .photo-data h2 {
+    margin-top: 0;
+  }
+  #home-continue .container-home .husband-bride #union {
+    display: none;
+  }
+  #home-continue .container-home p {
+    margin-top: 0;
+    text-align: center;
+  }
+  #home-continue .background-left-leaf {
+    left: -250px;
+    width: 100%;
+  }
+  #home-continue .background-right-leaf {
+    right: -30px;
+    top: -350px;
+    width: 60%;
+  }
+}
+#countdown-section {
+  background-color: #ECF2F0;
+  color: #888888;
+  position: relative;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#countdown-section .countdown-container {
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border-radius: 10px;
+  z-index: 100;
+}
+#countdown-section .countdown-container h1 {
+  margin: 0px;
+}
+#countdown-section .countdown-container #countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 16px;
+  z-index: 6;
+}
+#countdown-section .countdown-container #countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#countdown-section .countdown-container #countdown span {
+  font-size: 60px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#countdown-section .background-leaf-center {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(-1);
+  background-image: url("../assets/img/background-decoration/leaf-4-lightgreen.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 1;
+}
+#countdown-section .wave {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave-lightgreen-down.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#countdown-section .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#countdown-section .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#countdown-section .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#countdown-section .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #countdown-section {
+    height: auto;
+    padding: 10px;
+  }
+  #countdown-section .countdown-container {
+    padding: 0px 20px;
+  }
+  #countdown-section .countdown-container #countdown {
+    gap: 20px;
+    font-size: 16px;
+    flex-wrap: wrap;
+  }
+  #countdown-section .countdown-container #countdown span {
+    font-size: 40px;
+  }
+  #countdown-section .background-leaf-center {
+    width: 90%;
+  }
+}
+#parents {
+  min-height: 100vh;
+  background-color: #B4D2C8;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+#parents .container-parents {
+  transform: translateY(-30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#parents .container-parents .husband-bride-parents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+#parents .container-parents .husband-bride-parents .parent {
+  width: 100%;
+}
+#parents .container-parents .husband-bride-parents .parent h2 {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+}
+#parents .container-parents .husband-bride-parents #salud {
+  height: 150px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+#parents .container-parents .husband-bride-parents #husband-parents h2 {
+  text-align: right;
+}
+#parents .container-parents .husband-bride-parents #bride-parents h2 {
+  text-align: left;
+}
+#parents .container-parents h1 {
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#parents .container-parents p {
+  margin-top: 30px;
+  width: 750px;
+  text-align: center;
+  color: #545756;
+}
+#parents .background-leaf-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 300px;
+  background-image: url(../assets/img/background-decoration/leaf-6-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0;
+  transform: translate(-100%, 100%);
+  transition: all 1s ease-out;
+}
+#parents .background-leaf-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 300px;
+  background-image: url(../assets/img/background-decoration/leaf-6-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0;
+  transform: translate(100%, 100%) scaleX(-1);
+  transition: all 1s ease-out;
+}
+#parents .background-leaf-top-left {
+  position: absolute;
+  top: -25px;
+  left: -9%;
+  width: 500px;
+  height: 350px;
+  background-image: url(../assets/img/background-decoration/leaf-3-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  rotate: 130deg;
+  opacity: 0;
+  transform: translate(100%, 100%) scalex(-1);
+  transition: all 1s ease-out;
+}
+#parents .background-leaf-top-right {
+  position: absolute;
+  top: -25px;
+  right: -9%;
+  width: 500px;
+  height: 350px;
+  background-image: url(../assets/img/background-decoration/leaf-3-white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  rotate: -130deg;
+  opacity: 0;
+  transform: translate(-100%, 100%);
+  transition: all 1s ease-out;
+}
+#parents .background-leaf-left-center {
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  width: 1000px;
+  height: 250px;
+  background-image: url("../assets/img/background-decoration/leaf-4-white.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  rotate: -90deg;
+  opacity: 0;
+  transform: translate(10%, -100%);
+  transition: all 1s ease-out;
+}
+#parents .background-leaf-right-center {
+  position: absolute;
+  top: 50%;
+  right: -25%;
+  width: 1000px;
+  height: 250px;
+  background-image: url("../assets/img/background-decoration/leaf-4-white.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  rotate: -90deg;
+  opacity: 0;
+  transform: translate(10%, 100%) scaley(-1);
+  transition: all 1s ease-out;
+}
+#parents .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#parents .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#parents .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#parents .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#parents .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+#parents.scrolled .background-leaf-left {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+#parents.scrolled .background-leaf-right {
+  opacity: 1;
+  transform: translate(0, 0);
+  transform: scaleX(-1);
+}
+#parents.scrolled .background-leaf-top-left {
+  opacity: 1;
+  transform: translate(0, 0) scalex(-1);
+}
+#parents.scrolled .background-leaf-top-right {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+#parents.scrolled .background-leaf-left-center {
+  opacity: 1;
+  transform: translate(10%, 0%);
+}
+#parents.scrolled .background-leaf-right-center {
+  opacity: 1;
+  transform: translate(10%, 0%) scaley(-1);
+}
+
+@media screen and (max-width: 768px) {
+  #parents {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  #parents .container-parents {
+    width: 80%;
+    z-index: 10;
+  }
+  #parents .container-parents .husband-bride-parents {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  #parents .container-parents .husband-bride-parents .parent {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  #parents .container-parents .husband-bride-parents .parent h2 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+  }
+  #parents .container-parents .husband-bride-parents #husband-parents h2 {
+    text-align: center;
+  }
+  #parents .container-parents .husband-bride-parents #bride-parents h2 {
+    text-align: center;
+  }
+  #parents .container-parents .husband-bride-parents #salud {
+    height: 100px;
+  }
+  #parents .container-parents h1 {
+    margin-bottom: 35px;
+  }
+  #parents .container-parents p {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+  }
+  #parents .background-leaf-left {
+    width: 300px;
+    height: 200px;
+    opacity: 1;
+    transform: translate(-40%, -20%) scale(1, -1) rotate(90deg);
+  }
+  #parents .background-leaf-right {
+    width: 300px;
+    height: 200px;
+    opacity: 1;
+    transform: translate(40%, -20%) scale(-1, -1) rotate(90deg);
+  }
+  #parents.scrolled .background-leaf-left {
+    opacity: 1;
+    transform: translate(-40%, -20%) scale(1, -1) rotate(90deg);
+  }
+  #parents.scrolled .background-leaf-right {
+    opacity: 1;
+    transform: translate(40%, -20%) scale(-1, -1) rotate(90deg);
+  }
+  #parents .background-leaf-top-left {
+    width: 300px;
+    height: 200px;
+    left: -110px;
+    opacity: 1;
+    transform: translate(0, 0) scalex(-1);
+  }
+  #parents .background-leaf-top-right {
+    width: 300px;
+    height: 200px;
+    right: -110px;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  #parents.scrolled .background-leaf-top-left {
+    opacity: 1;
+    transform: translate(0, 0) scalex(-1);
+  }
+  #parents.scrolled .background-leaf-top-right {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  #parents .background-leaf-left-center {
+    top: 50%;
+    left: -25%;
+    width: 500px;
+    height: 125px;
+    opacity: 0;
+    transform: translate(10%, -200%);
+    transition: all 1s ease-out;
+  }
+  #parents .background-leaf-right-center {
+    top: 50%;
+    right: -25%;
+    width: 500px;
+    height: 125px;
+    opacity: 0;
+    transform: translate(10%, 200%) scaley(-1);
+    transition: all 1s ease-out;
+  }
+  #parents.scrolled .background-leaf-left-center {
+    opacity: 1;
+    transform: translate(10%, -100%);
+  }
+  #parents.scrolled .background-leaf-right-center {
+    opacity: 1;
+    transform: translate(10%, 100%) scaley(-1);
+  }
+}
+#place {
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#place .container-place {
+  display: flex;
+  flex-direction: column;
+  transform: translatey(-50px);
+  position: relative;
+  justify-items: center;
+  align-items: center;
+  z-index: 100;
+}
+#place .container-place .container-place-info {
+  display: flex;
+  gap: 20px;
+}
+#place .container-place .container-place-info #salon {
+  border-radius: 20px;
+  height: 400px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#place .container-place .container-place-info .info {
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 25px;
+}
+#place .container-place .container-place-info .info .info-sup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#place .container-place .container-place-info .info .title-info {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#place .container-place .container-place-info .info p {
+  margin-top: 0;
+  padding: 0px 10px;
+  text-wrap: wrap;
+  text-align: center;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#place .container-place .container-place-info .info .info-add {
+  font-size: 16px;
+  margin: 0;
+  padding: 0px 20px;
+}
+#place .background-top-leaf-center {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%) scaleY(-1);
+  background-image: url("../assets/img/background-decoration/leaf-4-lightgreen.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 5;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+#place.scrolled .background-top-leaf-center {
+  opacity: 0.6;
+  transform: translate(-50%, -50%) scaleY(-1);
+}
+#place .background-bottom-leaf-center {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../assets/img/background-decoration/leaf-4-lightgreen.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 5;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+#place.scrolled .background-bottom-leaf-center {
+  opacity: 0.6;
+  transform: translateX(-50%);
+}
+#place .wave {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave-down.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#place .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#place .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#place .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#place .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #place {
+    height: auto;
+  }
+  #place .container-place {
+    margin-bottom: 0;
+    transform: translatey(0px);
+    margin-bottom: 20px;
+  }
+  #place .container-place h1 {
+    margin-top: 20px;
+    width: 90%;
+  }
+  #place .container-place .container-place-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  #place .container-place .container-place-info .info {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  #place .container-place .container-place-info .info p {
+    height: auto;
+    align-content: center;
+  }
+  #place .container-place .container-place-info .info .info-sup {
+    margin-bottom: 15px;
+  }
+  #place .container-place .container-place-info #salon {
+    width: 105%;
+    margin: 0;
+    height: auto;
+  }
+}
+#schedule {
+  min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ECF2F0;
+  overflow: hidden;
+  z-index: 2;
+}
+#schedule .container-schedule {
+  margin-top: 80px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+}
+#schedule .container-schedule .timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#schedule .container-schedule .timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  margin-left: -2px;
+}
+#schedule .container-schedule .timeline-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 20px;
+}
+#schedule .container-schedule .timeline-item.highlight {
+  z-index: 4;
+}
+#schedule .container-schedule .timeline-item.highlight .timeline-circle {
+  background-color: #026842;
+}
+#schedule .container-schedule .timeline-item.highlight .timeline-content {
+  background-color: #B4D2C8;
+  transition: transform 0.5s;
+  transform: translateX(20px);
+}
+#schedule .container-schedule .timeline-item.highlight .timeline-content h3 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#schedule .container-schedule .timeline-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #B4D2C8;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 0;
+  z-index: 1;
+  flex-direction: column;
+}
+#schedule .container-schedule .timeline-circle img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#schedule .container-schedule .timeline-content {
+  margin-left: 60px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#schedule .container-schedule .timeline-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #888888;
+}
+#schedule .container-schedule .timeline-content p {
+  margin: 0;
+  color: #555;
+  width: 500px;
+}
+#schedule .container-schedule .timeline::after {
+  bottom: 100px; /* Ajusta la posición para el último item */
+}
+#schedule .background-top-1 {
+  background-image: url(../assets/img/background-decoration/background-top.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: all 1s ease-out;
+}
+#schedule.scrolled .background-top-1 {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+#schedule .background-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-bottom.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+}
+#schedule .background-streak-top-1 {
+  background-image: url(../assets/img/background-decoration/background-streak-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -15%;
+  left: -20%;
+  rotate: 250deg;
+  transform: translate(0px, -500px) scaleX(-1);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#schedule.scrolled .background-streak-top-1 {
+  opacity: 0.5;
+  transform: translate(0, 0) scaleX(-1);
+}
+#schedule .background-streak-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-streaksimple-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  right: -20%;
+  rotate: 60deg;
+  transform: translate(0, -30%) scaleX(-1);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#schedule.scrolled .background-streak-bottom-1 {
+  opacity: 0.4;
+  transform: translate(0, 0) scaleX(-1);
+}
+#schedule .background-left-leaf {
+  background-image: url(../assets/img/background-decoration/leaf-5-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  transform: translate(50%, 50%) scalex(1);
+  opacity: 0;
+  rotate: 100deg;
+  transition: all 2s ease-out;
+}
+#schedule.scrolled .background-left-leaf {
+  transform: scalex(1);
+  opacity: 1;
+}
+#schedule .background-right-leaf {
+  background-image: url(../assets/img/background-decoration/branch-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  top: -10px;
+  right: -40%;
+  rotate: -5deg;
+  transform: translate(50%, -50%) scale(1, 1);
+  opacity: 0.7;
+  transition: all 2s ease-out;
+}
+#schedule.scrolled .background-right-leaf {
+  transform: translate(0%, 0%) scale(1, 1);
+  opacity: 0.7;
+}
+#schedule .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave-green.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#schedule .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#schedule .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#schedule .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#schedule .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #schedule .container-schedule {
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  #schedule .container-schedule h1 {
+    width: 80%;
+  }
+  #schedule .container-schedule .timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+    width: 100%;
+  }
+  #schedule .container-schedule .timeline::after {
+    left: 25px;
+    bottom: 160px;
+  }
+  #schedule .container-schedule .timeline-circle {
+    left: 10px;
+  }
+  #schedule .container-schedule .timeline-content {
+    width: 220px;
+    margin-left: 50px;
+  }
+  #schedule .container-schedule .timeline-content p {
+    width: 80%;
+  }
+}
+#party {
+  background-color: #B4D2C8;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translatey(-50px);
+  z-index: 1;
+  padding-top: 40px;
+}
+#party .container-party {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  position: relative;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+#party .container-party h1 {
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#party .container-party p {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #545756;
+}
+#party .container-party .container-party-info {
+  display: flex;
+  gap: 20px;
+}
+#party .container-party .container-party-info .info {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 30px 30px;
+}
+#party .container-party .container-party-info .info .title-info {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#party .container-party .container-party-info .info p {
+  margin-top: 0;
+  text-wrap: wrap;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#party .container-party .container-party-info .info ul {
+  margin-bottom: 0;
+}
+#party .container-party .container-party-info .info ul li {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #545756;
+}
+#party .wave {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/background-decoration/wave-green-down.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+#party .wave#wave1 {
+  z-index: 4;
+  opacity: 1;
+  background-position-x: 500px;
+}
+#party .wave#wave2 {
+  z-index: 3;
+  opacity: 0.7;
+  background-position-x: 700px;
+}
+#party .wave#wave3 {
+  z-index: 2;
+  opacity: 0.5;
+  background-position-x: 250px;
+}
+#party .wave#wave4 {
+  z-index: 1;
+  opacity: 0.2;
+  background-position-x: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  #party .container-party {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 25px;
+  }
+  #party .container-party h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #party .container-party p {
+    margin-bottom: 10px;
+  }
+  #party .container-party .container-party-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 0px;
+  }
+  #party .container-party .container-party-info .info {
+    width: 100%;
+    margin: 20px;
+    margin-bottom: 0;
+  }
+  #party .container-party ul {
+    margin-top: 0;
+  }
+  #party .container-party ul li {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+}
+#attendance {
+  background-color: #F6F4F2;
+  position: relative;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  overflow: hidden;
+}
+#attendance .container-attendance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+#attendance .container-attendance h1 {
+  margin-top: 35px;
+}
+#attendance .background-top-1 {
+  background-image: url(../assets/img/background-decoration/background-top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-top-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+#attendance .background-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  rotate: -180deg;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-bottom-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+#attendance .background-streak-top-1 {
+  background-image: url(../assets/img/background-decoration/background-streak-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  top: 450px;
+  left: -23%;
+  rotate: 230deg;
+  transform: scaleX(-1) translateY(-100%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-streak-top-1 {
+  opacity: 1;
+  transform: scaleX(-1) translateY(-10%);
+}
+#attendance .background-streak-bottom-1 {
+  background-image: url(../assets/img/background-decoration/background-streaksimple-top-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  top: 0px;
+  right: -33%;
+  rotate: 20deg;
+  transform: scalex(-1) translateX(-40%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-streak-bottom-1 {
+  opacity: 1;
+  transform: scaleX(-1) translatey(0);
+}
+#attendance .background-left-leaf {
+  background-image: url(../assets/img/background-decoration/leaf-5-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: -15%;
+  transform: scalex(1) translateY(40%);
+  rotate: 100deg;
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-left-leaf {
+  opacity: 1;
+  transform: scaleX(1) translatey(0);
+}
+#attendance .background-right-leaf {
+  background-image: url(../assets/img/background-decoration/leaf-2-lightgreen.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  top: -55px;
+  right: -28%;
+  rotate: -5deg;
+  transform: scale(1, -1) translate(50%);
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+#attendance.scrolled .background-right-leaf {
+  opacity: 1;
+  transform: scale(1, -1) translatey(0);
+}
+
+@media screen and (max-width: 768px) {
+  #attendance {
+    width: 100%;
+  }
+  #attendance .container-attendance h1 {
+    width: 80%;
+  }
+  #attendance .background-left-leaf {
+    left: -200px;
+    width: 100%;
+  }
+  #attendance .background-right-leaf {
+    right: -30px;
+    top: -200px;
+    width: 60%;
+  }
+}
+#dev-name {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #B4D2C8;
+}
+#dev-name p {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  color: #026842;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#dev-name img {
+  height: 25px;
+}
+
+#leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11111;
+  pointer-events: none;
+}
+#leaves #falling-leaves-container {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50px);
+}
+#leaves #falling-leaves-container span {
+  display: inline-block;
+  background-image: url("../assets/icons/heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  /*
+  &:nth-child(5n+5){
+      animation-delay: 1.3s;
+  }
+  &:nth-child(3n+2){
+      animation-delay: 1.5s;
+  }
+  &:nth-child(2n+5){
+      animation-delay: 1.7s;
+  }
+  &:nth-child(3n+10){
+      animation-delay: 2.7s;
+  }
+  &:nth-child(7n+2){
+      animation-delay: 3.5s;
+  }
+  &:nth-child(4n+5){
+      animation-delay: 8s;
+  }
+  &:nth-child(4n+5){
+      animation-delay: 8s;
+  }
+  */
+}
+#leaves #falling-leaves-container span:nth-child(1) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 1.9s;
+}
+#leaves #falling-leaves-container span:nth-child(2) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.2s;
+}
+#leaves #falling-leaves-container span:nth-child(3) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 3.2s;
+}
+#leaves #falling-leaves-container span:nth-child(4) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 1.4s;
+}
+#leaves #falling-leaves-container span:nth-child(5) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 4.9s;
+}
+#leaves #falling-leaves-container span:nth-child(6) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 6.8s;
+}
+#leaves #falling-leaves-container span:nth-child(7) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 8.5s;
+}
+#leaves #falling-leaves-container span:nth-child(8) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 6.7s;
+}
+#leaves #falling-leaves-container span:nth-child(9) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 7.9s;
+}
+#leaves #falling-leaves-container span:nth-child(10) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 7.3s;
+}
+#leaves #falling-leaves-container span:nth-child(11) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.7s;
+}
+#leaves #falling-leaves-container span:nth-child(12) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.8s;
+}
+#leaves #falling-leaves-container span:nth-child(13) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 4.2s;
+}
+#leaves #falling-leaves-container span:nth-child(14) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 3.7s;
+}
+#leaves #falling-leaves-container span:nth-child(15) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 6.2s;
+}
+#leaves #falling-leaves-container span:nth-child(16) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 2.9s;
+}
+#leaves #falling-leaves-container span:nth-child(17) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 6.2s;
+}
+#leaves #falling-leaves-container span:nth-child(18) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 4.7s;
+}
+#leaves #falling-leaves-container span:nth-child(19) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 3.9s;
+}
+#leaves #falling-leaves-container span:nth-child(20) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 2.1s;
+}
+#leaves #falling-leaves-container span:nth-child(21) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.4s;
+}
+#leaves #falling-leaves-container span:nth-child(22) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 5.1s;
+}
+#leaves #falling-leaves-container span:nth-child(23) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 9.8s;
+}
+#leaves #falling-leaves-container span:nth-child(24) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.9s;
+}
+#leaves #falling-leaves-container span:nth-child(25) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 6.7s;
+}
+#leaves #falling-leaves-container span:nth-child(26) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 1.7s;
+}
+#leaves #falling-leaves-container span:nth-child(27) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 3.5s;
+}
+#leaves #falling-leaves-container span:nth-child(28) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 9.7s;
+}
+#leaves #falling-leaves-container span:nth-child(29) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 9.6s;
+}
+#leaves #falling-leaves-container span:nth-child(30) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 8.2s;
+}
+#leaves #falling-leaves-container span:nth-child(31) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 4.5s;
+}
+#leaves #falling-leaves-container span:nth-child(32) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 2.7s;
+}
+#leaves #falling-leaves-container span:nth-child(33) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 4.1s;
+}
+#leaves #falling-leaves-container span:nth-child(34) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 5.9s;
+}
+#leaves #falling-leaves-container span:nth-child(35) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 10.7s;
+}
+#leaves #falling-leaves-container span:nth-child(36) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 3.6s;
+}
+#leaves #falling-leaves-container span:nth-child(37) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 8.2s;
+}
+#leaves #falling-leaves-container span:nth-child(38) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 6.4s;
+}
+#leaves #falling-leaves-container span:nth-child(39) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 7.6s;
+}
+#leaves #falling-leaves-container span:nth-child(40) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 9.8s;
+}
+#leaves #falling-leaves-container span:nth-child(41) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 2.8s;
+}
+#leaves #falling-leaves-container span:nth-child(42) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 4.3s;
+}
+#leaves #falling-leaves-container span:nth-child(43) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 1.5s;
+}
+#leaves #falling-leaves-container span:nth-child(44) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 8.8s;
+}
+#leaves #falling-leaves-container span:nth-child(45) {
+  animation: falling2 10s linear infinite;
+  animation-delay: 3.5s;
+}
+#leaves #falling-leaves-container span:nth-child(46) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 5.2s;
+}
+#leaves #falling-leaves-container span:nth-child(47) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 9.3s;
+}
+#leaves #falling-leaves-container span:nth-child(48) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 5.2s;
+}
+#leaves #falling-leaves-container span:nth-child(49) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 4.1s;
+}
+#leaves #falling-leaves-container span:nth-child(50) {
+  animation: falling1 10s linear infinite;
+  animation-delay: 10.8s;
+}
+@keyframes falling1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) rotatez(105deg);
+    opacity: 0;
+  }
+}
+@keyframes falling2 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotatez(-118deg);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #leaves {
+    overflow: hidden;
+  }
+  #leaves #falling-leaves-container {
+    transform: translateY(-20px);
+  }
+  #leaves #falling-leaves-container span {
+    display: inline-block;
+    background-image: url("../assets/icons/heart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+  #leaves #falling-leaves-container span:nth-child(1) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 3.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(2) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 3.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(3) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 7.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(4) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 14.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(5) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(6) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(7) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(8) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(9) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(10) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(11) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 11.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(12) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 7.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(13) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 3.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(14) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(15) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 2.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(16) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(17) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 11.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(18) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(19) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(20) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(21) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(22) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(23) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 7.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(24) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 5.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(25) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 5.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(26) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(27) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 11.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(28) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(29) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 7.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(30) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(31) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(32) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(33) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(34) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(35) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(36) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(37) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(38) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 14.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(39) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(40) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 3.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(41) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(42) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(43) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(44) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 5.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(45) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 14.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(46) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 4.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(47) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(48) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 5.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(49) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(50) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(51) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 12.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(52) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(53) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 4.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(54) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(55) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 6.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(56) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 9.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(57) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(58) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 2.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(59) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 3.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(60) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 10.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(61) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 10.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(62) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 4.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(63) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 12.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(64) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 4.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(65) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(66) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(67) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 9.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(68) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 4.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(69) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 3.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(70) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(71) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 7.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(72) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(73) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 11.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(74) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(75) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 3.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(76) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(77) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(78) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(79) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 4.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(80) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(81) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(82) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 6.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(83) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 13.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(84) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 9.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(85) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 4.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(86) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(87) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(88) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 12.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(89) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(90) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 9.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(91) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 9.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(92) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 9.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(93) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(94) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(95) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(96) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 6.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(97) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 13.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(98) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(99) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 9.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(100) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 7.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(101) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 6.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(102) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 10.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(103) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(104) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(105) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 2.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(106) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 11.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(107) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(108) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(109) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(110) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 5.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(111) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(112) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 4.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(113) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 8.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(114) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(115) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 12.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(116) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 2.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(117) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 10.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(118) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 5.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(119) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 12.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(120) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(121) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 13.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(122) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 9.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(123) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(124) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 1.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(125) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 4.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(126) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(127) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 2.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(128) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 12.9s;
+  }
+  #leaves #falling-leaves-container span:nth-child(129) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(130) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 13.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(131) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 6.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(132) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(133) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.3s;
+  }
+  #leaves #falling-leaves-container span:nth-child(134) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.4s;
+  }
+  #leaves #falling-leaves-container span:nth-child(135) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 12.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(136) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 15.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(137) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 1.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(138) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 9.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(139) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 6.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(140) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(141) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 15.1s;
+  }
+  #leaves #falling-leaves-container span:nth-child(142) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(143) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(144) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 10.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(145) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 7.5s;
+  }
+  #leaves #falling-leaves-container span:nth-child(146) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 7.7s;
+  }
+  #leaves #falling-leaves-container span:nth-child(147) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 11.8s;
+  }
+  #leaves #falling-leaves-container span:nth-child(148) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 14.2s;
+  }
+  #leaves #falling-leaves-container span:nth-child(149) {
+    animation: falling1 10s linear infinite;
+    animation-delay: 8.6s;
+  }
+  #leaves #falling-leaves-container span:nth-child(150) {
+    animation: falling2 10s linear infinite;
+    animation-delay: 13.1s;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

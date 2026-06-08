@@ -1,0 +1,263 @@
+// -----------------------------------------------------------------------------
+// _style-variables
+// Variables de color, tipografias, estilos base y helpers compartidos.
+// -----------------------------------------------------------------------------
+
+/* Colors */
+
+$title-primary-color: #026842;
+$title-secondary-color: #545756;
+$title-tertiary-color: #888888;
+$paragrap-primary-color: #000000;
+$paragrap-secondary-color: #545756;
+
+$background-primary-color: #F6F4F2;
+$background-secondary-color: #ECF2F0;
+$background-tertiary-color: #B4D2C8;
+$background-quaternary-color: #DCDCDC;
+
+/* Fonts */
+
+$paragraph-font-family: Georgia, Times, "Times New Roman", serif;
+
+/* Labels */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: $paragrap-primary-color;
+    overflow-x: hidden;
+}
+
+main{
+    overflow-x: hidden;
+}
+
+h1{
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    text-align: center;
+    color: $title-primary-color;
+    animation: animatedtext 4s ease-in-out infinite;
+    line-height: 50px;
+}
+
+@keyframes animatedtext{
+    0%, 100%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.1);
+    }
+}
+
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $title-secondary-color;
+}
+
+h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $title-tertiary-color;
+    text-decoration: none;
+}
+
+p, li{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: $paragrap-primary-color;
+}
+
+a{
+    text-decoration: none;
+}
+
+.circle-icon{
+    width: 120px;
+    height: 120px;
+    background-color: $background-tertiary-color;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s;
+    position: relative;
+    img{
+        padding: 10px;
+    }
+    animation: beat 1s infinite;
+    //animacion de corazon latiendo infinitamente
+    .heart{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-image: url('../assets/img/icons/heart.png');
+        background-size: cover;
+        animation: beat 2s infinite;
+    }
+    @keyframes beat{
+        0%, 100%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.05);
+        }
+    }
+}
+
+.button{
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+    h2{
+        margin: 0;
+        padding: 10px 20px;
+        background-color: #B4D2C8;
+        text-align: center;
+    }
+    transition: transform 0.5s;
+    &:hover{
+        transform: scale(1.08);
+        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+        h2{
+            color: white;
+            background-color: rgb(2, 104, 66,0.5);
+        }
+        .button-ribbon-left{
+            .triangle-top-left{
+                width: 0;
+                border-left: 9px solid transparent;
+                border-right: 9px solid rgb(2, 104, 66,0.5);
+                border-bottom: 12px solid transparent;
+                border-top: 12px solid rgb(2, 104, 66,0.5);
+            }
+            .triangle-bottom-left{
+                width: 0;
+                border-left: 9px solid transparent;
+                border-right: 9px solid rgb(2, 104, 66,0.5);
+                border-bottom: 12px solid rgb(2, 104, 66,0.5);
+                border-top: 12px solid transparent;
+            }
+        }
+        .button-ribbon-right{
+            .triangle-top-right{
+                width: 0;
+                border-left: 9px solid rgb(2, 104, 66,0.5);
+                border-right: 9px solid transparent;
+                border-bottom: 12px solid transparent;
+                border-top: 12px solid rgb(2, 104, 66,0.5);
+            }
+            .triangle-bottom-right{
+                width: 0;
+                border-left: 9px solid rgb(2, 104, 66,0.5);
+                border-right: 9px solid transparent;
+                border-bottom: 12px solid rgb(2, 104, 66,0.5);
+                border-top: 12px solid transparent;
+            }
+        
+        }
+    }
+    .button-ribbon-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .triangle-top-left{
+            width: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid #B4D2C8;
+            border-bottom: 12px solid transparent;
+            border-top: 12px solid #B4D2C8;
+        }
+        .triangle-bottom-left{
+            width: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid #B4D2C8;
+            border-bottom: 12px solid #B4D2C8;
+            border-top: 12px solid transparent;
+        }
+    }
+    .button-ribbon-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .triangle-top-right{
+            width: 0;
+            border-left: 9px solid #B4D2C8;
+            border-right: 9px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-top: 12px solid #B4D2C8;
+        }
+        .triangle-bottom-right{
+            width: 0;
+            border-left: 9px solid #B4D2C8;
+            border-right: 9px solid transparent;
+            border-bottom: 12px solid #B4D2C8;
+            border-top: 12px solid transparent;
+        }
+    }
+}
+
+.hidden-element{
+    display: none;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 40px;
+        line-height: 30px;
+    }
+    h2{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    h3{
+        font-size: 12px;
+    }
+    p{
+        font-size: 16px;
+    }
+    .circle-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .button{
+        h2{
+            padding: 10px 15px;
+        }
+    }
+}

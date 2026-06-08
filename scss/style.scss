@@ -1,0 +1,17 @@
+// Hoja principal SCSS
+// Este archivo organiza los modulos de estilos de toda la invitacion.
+// Recomendacion: editar primero SCSS y luego compilar a CSS.
+
+@import "style-variables";      // Variables globales, estilos base y utilitarios.
+@import "style-navbar";         // Navbar (actualmente comentado en index.html).
+@import "style-loading-screen"; // Pantalla de carga inicial.
+@import "style-home";           // Portada principal con slider.
+@import "style-home-continue";  // Presentacion de los novios.
+@import "style-countdown";      // Bloque del contador regresivo.
+@import "style-parents";        // Seccion de padres y padrinos.
+@import "style-place";          // Seccion de fecha y lugar.
+@import "style-schedule";       // Cronograma del evento.
+@import "style-party";          // Detalles importantes para invitados.
+@import "style-attendance";     // Confirmacion de asistencia.
+@import "style-footer";         // Pie de pagina.
+@import "style-fallingleaves";  // Animacion decorativa de hojas.
