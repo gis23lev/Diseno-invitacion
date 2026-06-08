@@ -1,2 +1,2 @@
-# Dise-o-invitaci-n
+# Diseno-invitacion
 Diseños de Invitaciones
